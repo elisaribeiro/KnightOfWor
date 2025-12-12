@@ -526,6 +526,7 @@ public class PlayFieldScreen extends Application {
 	public void pauseGame() throws Exception{
 		if(gameWasPaused){
 			timeline.play();
+			player.toggleMoveable();
 			for (Enemy e : enemyList) {
     			e.startWizardAttack(); 
 			}
@@ -549,6 +550,7 @@ public class PlayFieldScreen extends Application {
     			e.stopWizardAttack(); 
 			}
 			timeline.pause();
+			player.toggleMoveable();
 			pauseLevelTimer();
 		}
 	}
